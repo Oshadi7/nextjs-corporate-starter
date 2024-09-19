@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_about_sections",
+  "info": {
+    "displayName": "AboutSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description1": {
+      "type": "text"
+    }
+  }
+}

@@ -157,10 +157,14 @@ export interface SectionsHero extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String;
     description: Attribute.String & Attribute.Required;
-    picture: Attribute.Media<'images'> & Attribute.Required;
+    picture: Attribute.Media<'images'>;
     buttons: Attribute.Component<'links.button-link', true>;
+    title1: Attribute.String;
+    title2: Attribute.String;
+    title3: Attribute.String;
+    title4: Attribute.String;
   };
 }
 
@@ -185,6 +189,7 @@ export interface SectionsFeatures extends Schema.Component {
     heading: Attribute.String;
     description: Attribute.Text;
     feature: Attribute.Component<'elements.feature', true>;
+    clients: Attribute.Media<'images' | 'videos' | 'audios' | 'files', true>;
   };
 }
 
@@ -212,6 +217,18 @@ export interface SectionsFeatureColumnsGroup extends Schema.Component {
   };
 }
 
+export interface SectionsClients extends Schema.Component {
+  collectionName: 'components_sections_clients';
+  info: {
+    displayName: 'Clients';
+    description: '';
+  };
+  attributes: {
+    heading: Attribute.String;
+    picture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SectionsBottomActions extends Schema.Component {
   collectionName: 'components_slices_bottom_actions';
   info: {
@@ -224,6 +241,19 @@ export interface SectionsBottomActions extends Schema.Component {
     title: Attribute.String;
     buttons: Attribute.Component<'links.button-link', true>;
     description: Attribute.Text;
+  };
+}
+
+export interface SectionsAboutSection extends Schema.Component {
+  collectionName: 'components_sections_about_sections';
+  info: {
+    displayName: 'AboutSection';
+    description: '';
+  };
+  attributes: {
+    description: Attribute.Text;
+    picture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description1: Attribute.Text;
   };
 }
 
@@ -494,7 +524,9 @@ declare module '@strapi/types' {
       'sections.features': SectionsFeatures;
       'sections.feature-rows-group': SectionsFeatureRowsGroup;
       'sections.feature-columns-group': SectionsFeatureColumnsGroup;
+      'sections.clients': SectionsClients;
       'sections.bottom-actions': SectionsBottomActions;
+      'sections.about-section': SectionsAboutSection;
       'meta.metadata': MetaMetadata;
       'links.social-link': LinksSocialLink;
       'links.link': LinksLink;
